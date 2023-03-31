@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using BehaviourCollections.Serialization;
-using System.Linq;
 
 namespace BehaviourCollections
 {
@@ -22,8 +21,6 @@ namespace BehaviourCollections
         {
             TypeToBehaviour = new();
             TypeToInterface = new();
-
-            Behaviours = _typeToBehaviour.Values.ToArray();
             
             // convert serialized types to System.Type at runtime
             foreach (KeyValuePair<SerializableType, TBehaviour> entry in _typeToBehaviour)
