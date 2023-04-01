@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Reflection;
 
 namespace BehaviourCollections
 {
@@ -8,25 +9,28 @@ namespace BehaviourCollections
     public abstract class ManagedMonoBehaviour<TBehaviour> : BehaviourCollectionComponent<TBehaviour>
         where TBehaviour : MonoBehaviour
     {
-        [HideInInspector]
-        public BehaviourCollectionComponent<TBehaviour> Collection;
-
         [SerializeField, HideInInspector]
-        public int HashCode = -1;
+        public BehaviourCollectionComponent<TBehaviour> Collection;
 
         internal void Initialize()
         {
-            if (HashCode == -1)
+            if (Collection == null)
             {
                 Debug.LogError("ManagedMonoBehaviour has no associated Collection");
             }
             TypeToBehaviour = Collection.TypeToBehaviour;
             TypeToInterface = Collection.TypeToInterface;
         }
-        
-        public override int GetHashCode()
+
+        /// <summary>
+        /// Remove this <typeparamref name="TBehaviour"/> from its associated collection 
+        /// </summary>
+        /// <remarks>
+        /// IMPORTANT: Pass the type of this script as a generic parameter.
+        /// </remarks>
+        public void Deregister<T>()
         {
-            return HashCode;
+            TypeToBehaviour.Remove<T>();
         }
     }
 }

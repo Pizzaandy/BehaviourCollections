@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 using System.Runtime.CompilerServices;
 
 namespace BehaviourCollections
@@ -9,11 +8,11 @@ namespace BehaviourCollections
     public abstract class BehaviourCollectionComponent<TBehaviour> : MonoBehaviour
         where TBehaviour : MonoBehaviour
     {
-        internal Dictionary<Type, TBehaviour> TypeToBehaviour = new();
-        internal Dictionary<Type, TBehaviour> TypeToInterface = new();
+        internal FastTypeDictionary<TBehaviour> TypeToBehaviour = new();
+        internal FastTypeDictionary<TBehaviour> TypeToInterface = new();
 
         /// <summary>
-        /// Returns true if any InteractionBehaviours match the given type.
+        /// Returns true if any cached <typeparamref name="TBehaviour"/> matches the given type.
         /// </summary>
         /// <remarks>
         /// For interfaces, use TryGetInterface
@@ -21,57 +20,38 @@ namespace BehaviourCollections
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool TryGetBehaviour<T>(out T component) where T : TBehaviour
         {
-            bool exists = TypeToBehaviour.TryGetValue(typeof(T), out TBehaviour behaviour);
-            component = (T)behaviour;
-            return exists;
+            var behaviour = TypeToBehaviour.Get<T>();
+            component = behaviour as T;
+            return component is not null;
         }
 
         /// <summary>
-        /// Returns true if any InteractionBehaviours match the given type.
+        /// Returns true if any cached <typeparamref name="TBehaviour"/>s match the given type.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool HasBehaviour<T>() where T : TBehaviour
         {
-            return TypeToBehaviour.ContainsKey(typeof(T));
+            return TypeToBehaviour.Contains<T>();
         }
 
         /// <summary>
-        /// Returns true if any InteractionBehaviours implement the given interface.
+        /// Returns true if any cached <typeparamref name="TBehaviour"/>s implement the given interface.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool TryGetInterface<T>(out T @interface) where T : class
         {
-            bool exists = TypeToInterface.TryGetValue(typeof(T), out TBehaviour behaviour);
+            var behaviour = TypeToInterface.Get<T>();
             @interface = behaviour as T;
-            return exists;
+            return behaviour is not null;
         }
 
         /// <summary>
-        /// Returns true if any InteractionBehaviours implement the given interface.
+        /// Returns true if any cached <typeparamref name="TBehaviour"/>s implement the given interface.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool HasInterface<T>() where T : class
         {
-            return TypeToInterface.ContainsKey(typeof(T));
-        }
-
-        public void UpdateEntries()
-        {
-            foreach(var key in TypeToBehaviour.Keys.ToArray())
-            {
-                if (TypeToBehaviour[key] == null)
-                {
-                    TypeToBehaviour.Remove(key);
-                }
-            }
-
-            foreach(var key in TypeToInterface.Keys.ToArray())
-            {
-                if (TypeToInterface[key] == null)
-                {
-                    TypeToInterface.Remove(key);
-                }
-            }
+            return TypeToInterface.Contains<T>();
         }
     }
 }
