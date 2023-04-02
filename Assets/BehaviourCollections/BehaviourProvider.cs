@@ -19,7 +19,7 @@ namespace BehaviourCollections
         public bool TryGetBehaviour<T>(out T component) where T : TBehaviour
         {
             var behaviour = TypeToBehaviour.Get<T>();
-            component = behaviour as T;
+            component = (T)behaviour;
             return component is not null;
         }
 
