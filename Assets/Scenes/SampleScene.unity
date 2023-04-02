@@ -445,7 +445,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Collection: {fileID: 982450225}
-  HashCode: 5
 --- !u!114 &982450214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,7 +458,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Collection: {fileID: 982450225}
-  HashCode: 4
 --- !u!114 &982450215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,7 +471,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Collection: {fileID: 982450225}
-  HashCode: 3
 --- !u!114 &982450216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,7 +484,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Collection: {fileID: 982450225}
-  HashCode: 2
 --- !u!114 &982450217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,7 +497,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Collection: {fileID: 982450225}
-  HashCode: 1
 --- !u!114 &982450218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,7 +510,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Collection: {fileID: 982450225}
-  HashCode: 0
 --- !u!65 &982450220
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -606,7 +600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1968cd8bf2c90574fb563ff4ab70d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IterationsPerUpdate: 10000
+  IterationsPerUpdate: 100000
   testComponent: {fileID: 982450217}
 --- !u!114 &982450225
 MonoBehaviour:
