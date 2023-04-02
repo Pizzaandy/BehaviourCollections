@@ -1,11 +1,9 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.CompilerServices;
 
 namespace BehaviourCollections
 {
-    public abstract class BehaviourCollectionComponent<TBehaviour> : MonoBehaviour
+    public abstract class BehaviourProvider<TBehaviour> : MonoBehaviour
         where TBehaviour : MonoBehaviour
     {
         internal FastTypeDictionary<TBehaviour> TypeToBehaviour = new();
@@ -42,7 +40,7 @@ namespace BehaviourCollections
         {
             var behaviour = TypeToInterface.Get<T>();
             @interface = behaviour as T;
-            return behaviour is not null;
+            return @interface is not null;
         }
 
         /// <summary>

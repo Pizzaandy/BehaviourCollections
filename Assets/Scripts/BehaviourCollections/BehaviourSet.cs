@@ -1,13 +1,11 @@
-using System;
 using System.Collections.Generic;
-using System.Reflection;
 using UnityEngine;
 using UnityEditor;
 using BehaviourCollections.Serialization;
 
 namespace BehaviourCollections
 {
-    public class BehaviourSet<TBehaviour> : BehaviourCollectionComponent<TBehaviour>
+    public class BehaviourSet<TBehaviour> : BehaviourProvider<TBehaviour>
         where TBehaviour : ManagedMonoBehaviour<TBehaviour>
     {
         [SerializeField, HideInInspector]
@@ -34,13 +32,13 @@ namespace BehaviourCollections
             for (int i = 0; i < _behaviourTypes.Length; i++)
             {
                 var behaviour = _behaviours[i];
-                TypeToBehaviour.Add(_behaviourTypes[i].Type, behaviour);
+                TypeToBehaviour.AddByTypeParameter(_behaviourTypes[i].Type, behaviour);
                 behaviour.Initialize();
             }
 
-            for (int i = 0; i < _behaviourTypes.Length; i++)
+            for (int i = 0; i < _interfaceTypes.Length; i++)
             {
-                TypeToInterface.Add(_behaviourTypes[i].Type, _behaviours[i]);
+                TypeToInterface.AddByTypeParameter(_interfaceTypes[i].Type, _interfaces[i]);
             }
         }
 

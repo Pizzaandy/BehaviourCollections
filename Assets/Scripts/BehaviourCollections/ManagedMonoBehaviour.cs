@@ -1,16 +1,15 @@
 using UnityEngine;
-using System.Reflection;
 
 namespace BehaviourCollections
 {
     /// <summary>
     /// Base class for MonoBehaviours that are managed by a behaviour collection
     /// </summary>
-    public abstract class ManagedMonoBehaviour<TBehaviour> : BehaviourCollectionComponent<TBehaviour>
+    public abstract class ManagedMonoBehaviour<TBehaviour> : BehaviourProvider<TBehaviour>
         where TBehaviour : MonoBehaviour
     {
         [SerializeField, HideInInspector]
-        public BehaviourCollectionComponent<TBehaviour> Collection;
+        public BehaviourProvider<TBehaviour> Collection;
 
         internal void Initialize()
         {
