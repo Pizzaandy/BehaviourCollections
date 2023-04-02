@@ -356,55 +356,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
---- !u!1 &832575517
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 832575519}
-  - component: {fileID: 832575518}
-  m_Layer: 0
-  m_Name: Global Volume
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &832575518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832575517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: a6560a915ef98420e9faacc1c7438823, type: 2}
---- !u!4 &832575519
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832575517}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.591, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &982450212
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +537,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &982450224
 MonoBehaviour:
@@ -614,24 +565,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e60b7c6263d62f4ea2a4d0ba30f0cd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _typeToBehaviour:
-    m_keys:
-    - typeId: Carryable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-    - typeId: Selectable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-    - typeId: Selectable1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-    - typeId: Selectable2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-    - typeId: Selectable3, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-    - typeId: Selectable4, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-    m_values:
-    - {fileID: 982450218}
-    - {fileID: 982450217}
-    - {fileID: 982450216}
-    - {fileID: 982450215}
-    - {fileID: 982450214}
-    - {fileID: 982450213}
-  _typeToInterface:
-    m_keys:
-    - typeId: ISomething, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-    m_values:
-    - {fileID: 982450218}
+  _behaviourTypes:
+  - typeId: Carryable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - typeId: Selectable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - typeId: Selectable1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - typeId: Selectable2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - typeId: Selectable3, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - typeId: Selectable4, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  _behaviours:
+  - {fileID: 982450218}
+  - {fileID: 982450217}
+  - {fileID: 982450216}
+  - {fileID: 982450215}
+  - {fileID: 982450214}
+  - {fileID: 982450213}
+  _interfaceTypes:
+  - typeId: ISomething, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  _interfaces:
+  - {fileID: 982450218}
   NoDuplicates: 1
