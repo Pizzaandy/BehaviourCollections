@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 982450224}
   - component: {fileID: 982450225}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: TryGetBehaviour_Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -551,7 +551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1968cd8bf2c90574fb563ff4ab70d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IterationsPerUpdate: 100000
+  IterationsPerUpdate: 10000
   testComponent: {fileID: 982450217}
 --- !u!114 &982450225
 MonoBehaviour:
@@ -565,13 +565,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e60b7c6263d62f4ea2a4d0ba30f0cd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _behaviourTypes:
-  - typeId: Carryable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  - typeId: Selectable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  - typeId: Selectable1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  - typeId: Selectable2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  - typeId: Selectable3, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  - typeId: Selectable4, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   _behaviours:
   - {fileID: 982450218}
   - {fileID: 982450217}
@@ -579,8 +572,15 @@ MonoBehaviour:
   - {fileID: 982450215}
   - {fileID: 982450214}
   - {fileID: 982450213}
-  _interfaceTypes:
-  - typeId: ISomething, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   _interfaces:
   - {fileID: 982450218}
+  _behaviourTypes:
+  - typeId: Carryable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - typeId: Selectable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - typeId: Selectable1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - typeId: Selectable2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - typeId: Selectable3, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - typeId: Selectable4, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  _interfaceTypes:
+  - typeId: ISomething, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   NoDuplicates: 1

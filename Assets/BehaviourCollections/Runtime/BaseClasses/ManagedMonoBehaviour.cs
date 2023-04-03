@@ -25,17 +25,17 @@ namespace BehaviourCollections
         /// Removes this <typeparamref name="TBehaviour"/> from its associated collection 
         /// </summary>
         /// <remarks>
-        /// It is not recommended to destroy or register components managed by a behaviour collection.
+        /// It is not recommended to destroy or deregister components managed by a behaviour collection.
         /// </remarks>
         public void Deregister()
         {
             var type = GetType();
-            TypeToBehaviour.RemoveByTypeParameter(type);
+            TypeToBehaviour.Remove(type);
 
             var interfaces = type.GetInterfaces();
             foreach (var interfaceType in interfaces)
             {
-                TypeToInterface.RemoveByTypeParameter(interfaceType);
+                TypeToInterface.Remove(interfaceType);
             }
         }
     }

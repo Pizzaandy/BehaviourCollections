@@ -3,11 +3,13 @@ using System.Runtime.CompilerServices;
 
 namespace BehaviourCollections
 {
+    public class FastBehaviourDictionary : FastTypeDictionary<MonoBehaviour> {}
+
     public abstract class BehaviourProvider<TBehaviour> : MonoBehaviour
         where TBehaviour : MonoBehaviour
     {
-        internal FastTypeDictionary<TBehaviour> TypeToBehaviour = new();
-        internal FastTypeDictionary<TBehaviour> TypeToInterface = new();
+        internal FastBehaviourDictionary TypeToBehaviour = new();
+        internal FastBehaviourDictionary TypeToInterface = new();
 
         /// <summary>
         /// Returns true if any cached <typeparamref name="TBehaviour"/> matches the given type.
